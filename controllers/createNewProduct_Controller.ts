@@ -1,28 +1,27 @@
-import { Request,Response } from "express"
+import { NextFunction, Request, Response } from "express";
 import Product from "../models/productModel";
+import { ValidationError } from "../utils/errors"; 
 
-
-const createNewProduct_Controller = async(req:Request,res:Response)=>{
+const createNewProduct_Controller = async (req: Request, res: Response,next:NextFunction) => {
     try {
-        const {name,unit,category} = req.body
-        console.log(name,unit,category,'req.body')
-        if(!name || !unit || !category){
-            console.log('hey')
-            throw new Error('Please provide all fields')
+        const { name, unit, category } = req.body;
+        console.log(name, unit, category, 'req.body');
+
+        if (!name || !unit || !category) {
+            throw new ValidationError('Please provide all fields'); 
         }
-        const newProduct = await Product.create({name:name,unit:unit,category:category})
-        console.log(newProduct,'newww')
+
+        const newProduct = await Product.create({ name, unit, category });
+        console.log(newProduct, 'newww');
+
         res.json({
-            message:'Product created successfully',
-            newProduct
-        })
+            message: 'Product created successfully',
+            newProduct,
+        });
     } catch (error) {
-        console.log('error in getallproducts controller',error)
-        res.json({ 
-            message:'error in getallproducts controller',
-            error:error
-        })  
+        console.error('Error in createNewProduct controller:', error);
+        return next(error)
     }
-}
+};
 
 export default createNewProduct_Controller;

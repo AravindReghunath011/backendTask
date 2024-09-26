@@ -55,7 +55,7 @@ router.get('/', async (req: Request, res: Response) => {
                     current: {
                         temperature: response.data.current.temp_c,
                         condition: response.data.current.condition.text,
-                        wind: response.data.current.wind_kph,
+                        wind: response.data.current.wind_kph, 
                         humidity: response.data.current.humidity,
                         feelsLike: response.data.current.feelslike_c,
                         pressure: response.data.current.pressure_mb,
