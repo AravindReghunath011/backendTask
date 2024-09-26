@@ -1,1 +1,5 @@
 {"level":"error","message":"Internal Server Error: Expected double-quoted property name in JSON at position 42 (line 4 column 1)","timestamp":"2024-09-26T08:00:55.069Z"}
+{"level":"error","message":"Internal Server Error: secretOrPrivateKey must have a value","timestamp":"2024-09-26T17:02:57.825Z"}
+{"level":"error","message":"Internal Server Error: secretOrPrivateKey must have a value","timestamp":"2024-09-26T17:04:41.486Z"}
+{"level":"error","message":"Internal Server Error: secretOrPrivateKey must have a value","timestamp":"2024-09-26T17:06:10.494Z"}
+{"level":"error","message":"Internal Server Error: Expected double-quoted property name in JSON at position 84 (line 5 column 1)","timestamp":"2024-09-26T17:10:03.584Z"}

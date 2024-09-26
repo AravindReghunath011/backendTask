@@ -15,10 +15,10 @@ import  { Request, Response, NextFunction } from 'express';
 
 connectDB()
 app.use(express.json())
-app.use('/api/v1/product',productRouter)
 app.use('/api/v1/task1',inMemoryProductRouter)
 app.use('/api/v1/task2/user',userRoutes)
 app.use('/api/v1/task3/weather',weatherRoutes)
+app.use('/api/v1/task4/product',productRouter)
 
 app.use((err: unknown, req: Request, res: Response, next: NextFunction) => {
     if (res.headersSent) {
